@@ -29,15 +29,10 @@ class HistoryFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_history, container, false)
 
         // Set the adapter
-        if (view is RecyclerView) {
-            with(view) {
-                layoutManager = when {
-                    columnCount <= 1 -> LinearLayoutManager(context)
-                    else -> GridLayoutManager(context, columnCount)
-                }
-                adapter = HistoryRecyclerViewAdapter(DummyContent.ITEMS)
-            }
-        }
+        val recyclerView = view.findViewById<RecyclerView>(R.id.history_recycler_view)
+        recyclerView.adapter = HistoryRecyclerViewAdapter(DummyContent.ITEMS)
+
+
         return view
     }
 
