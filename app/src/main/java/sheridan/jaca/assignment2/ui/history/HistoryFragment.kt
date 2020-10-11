@@ -15,8 +15,6 @@ import sheridan.jaca.assignment2.ui.history.dummy.DummyContent
  */
 class HistoryFragment : Fragment() {
 
-    private var columnCount = 1
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setHasOptionsMenu(true)

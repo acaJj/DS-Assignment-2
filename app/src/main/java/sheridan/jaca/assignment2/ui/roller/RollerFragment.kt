@@ -9,11 +9,6 @@ import sheridan.jaca.assignment2.R
 
 class RollerFragment : Fragment() {
 
-    //unnecessary
-    companion object {
-        fun newInstance() = RollerFragment()
-    }
-
     private lateinit var viewModel: RollerViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
