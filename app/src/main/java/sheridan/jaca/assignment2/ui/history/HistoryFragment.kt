@@ -3,6 +3,8 @@ package sheridan.jaca.assignment2.ui.history
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 import sheridan.jaca.assignment2.R
 import sheridan.jaca.assignment2.databinding.FragmentHistoryBinding
@@ -13,6 +15,7 @@ import sheridan.jaca.assignment2.ui.history.dummy.DummyContent
  */
 class HistoryFragment : Fragment() {
     private lateinit var binding : FragmentHistoryBinding
+    private val viewModel: HistoryViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

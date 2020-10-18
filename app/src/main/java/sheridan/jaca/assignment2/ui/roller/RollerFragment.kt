@@ -4,6 +4,7 @@ import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import sheridan.jaca.assignment2.R
 import sheridan.jaca.assignment2.database.GameScore
@@ -12,7 +13,7 @@ import kotlin.random.Random
 
 class RollerFragment : Fragment() {
 
-    private lateinit var viewModel: RollerViewModel
+    private val viewModel: RollerViewModel by viewModels()
     private lateinit var binding : FragmentRollerBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,7 +33,6 @@ class RollerFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProviders.of(this).get(RollerViewModel::class.java)
         // TODO: Use the ViewModel
     }
 
