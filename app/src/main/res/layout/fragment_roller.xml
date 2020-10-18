@@ -1,13 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.roller.RollerFragment">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <TextView
+    <data>
+
+    </data>
+
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Hello" />
+        tools:context=".ui.roller.RollerFragment">
 
-</FrameLayout>
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:gravity="center">
+
+            <TableLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TableRow>
+
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:labelFor="@+id/txtDie1"
+                        android:textSize="20sp"
+                        android:text="Die 1: " />
+
+                    <TextView
+                        android:id="@+id/txtDie1"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:textSize="20sp" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:labelFor="@+id/txtDie2"
+                        android:textSize="20sp"
+                        android:text="Die 2: " />
+
+                    <TextView
+                        android:id="@+id/txtDie2"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:textSize="20sp" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:labelFor="@+id/txtDie3"
+                        android:textSize="20sp"
+                        android:text="Die 3: " />
+
+                    <TextView
+                        android:id="@+id/txtDie3"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:textSize="20sp" />
+                </TableRow>
+            </TableLayout>
+
+            <Button
+                android:id="@+id/btnRoll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:padding="10dp"
+                android:textSize="20sp"
+                android:text="Roll" />
+        </LinearLayout>
+
+    </FrameLayout>
+</layout>

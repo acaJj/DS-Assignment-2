@@ -6,10 +6,12 @@ import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import sheridan.jaca.assignment2.R
+import sheridan.jaca.assignment2.databinding.FragmentRollerBinding
 
 class RollerFragment : Fragment() {
 
     private lateinit var viewModel: RollerViewModel
+    private lateinit var binding : FragmentRollerBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,7 +22,10 @@ class RollerFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_roller, container, false)
+        binding = FragmentRollerBinding.inflate(inflater,container,false)
+        binding.btnRoll.setOnClickListener{rollDice()}
+
+        return binding.root
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -43,5 +48,9 @@ class RollerFragment : Fragment() {
             }
             else -> super.onOptionsItemSelected(item)
         }
+    }
+
+    private fun rollDice(){
+
     }
 }
