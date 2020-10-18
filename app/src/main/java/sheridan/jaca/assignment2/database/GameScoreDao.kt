@@ -8,10 +8,7 @@ import androidx.room.Query
 @Dao
 interface GameScoreDao {
     @Insert
-    suspend fun insert(score: GameScore):Long
-
-    @Query("SELECT * FROM scores WHERE id=:key")
-    fun get(key:Long) : LiveData<GameScore>
+    suspend fun insert(score: GameScore)
 
     @Query("SELECT * FROM scores ORDER BY id")
     fun getAll(): LiveData<List<GameScore>>
