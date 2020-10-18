@@ -33,8 +33,11 @@ class HistoryRecyclerViewAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = gameHistory!![position]
+        val gameTotal = item.die1Score + item.die2Score + item.die3Score
         holder.idView.text = position.toString()
-        holder.contentView.text = "${item.die1Score}" + "/ ${item.die2Score}" + "/ ${item.die3Score}"
+        holder.contentView.text =
+            "${item.die1Score}" + "/ ${item.die2Score}" + "/ ${item.die3Score}" +
+        " - Game Total: ${gameTotal}"
     }
 
     override fun getItemCount(): Int = gameHistory?.size ?: 0
