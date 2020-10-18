@@ -30,7 +30,7 @@ class HistoryFragment : Fragment() {
 
         // Set the adapter
         val recyclerView = view.findViewById<RecyclerView>(R.id.history_recycler_view)
-        recyclerView.adapter = HistoryRecyclerViewAdapter(DummyContent.ITEMS)
+        recyclerView.adapter = HistoryRecyclerViewAdapter(view.context)
 
 
         return view
