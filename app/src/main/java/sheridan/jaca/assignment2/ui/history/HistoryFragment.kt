@@ -5,12 +5,14 @@ import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import sheridan.jaca.assignment2.R
+import sheridan.jaca.assignment2.databinding.FragmentHistoryBinding
 import sheridan.jaca.assignment2.ui.history.dummy.DummyContent
 
 /**
  * A fragment representing a list of Items.
  */
 class HistoryFragment : Fragment() {
+    private lateinit var binding : FragmentHistoryBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

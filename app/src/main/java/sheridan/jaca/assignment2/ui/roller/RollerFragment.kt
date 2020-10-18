@@ -6,7 +6,9 @@ import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import sheridan.jaca.assignment2.R
+import sheridan.jaca.assignment2.database.GameScore
 import sheridan.jaca.assignment2.databinding.FragmentRollerBinding
+import kotlin.random.Random
 
 class RollerFragment : Fragment() {
 
@@ -51,6 +53,14 @@ class RollerFragment : Fragment() {
     }
 
     private fun rollDice(){
+        val die1Value = Random.nextInt(1,6)
+        val die2Value = Random.nextInt(1,6)
+        val die3Value = Random.nextInt(1,6)
+        binding.txtDie1.text = die1Value.toString()
+        binding.txtDie2.text = die2Value.toString()
+        binding.txtDie3.text = die3Value.toString()
 
+        //upload results to db
+        viewModel.send(GameScore(0,die1Value,die2Value,die3Value))
     }
 }

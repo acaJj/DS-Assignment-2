@@ -13,18 +13,13 @@ import sheridan.jaca.assignment2.database.GameScoreDatabase
 
 class RollerViewModel(application:Application) : AndroidViewModel(application) {
     // TODO: Implement the ViewModel
-    private val _scoreId = MutableLiveData<Long?>().apply { value = null }
-
-    val scoreId: LiveData<Long?> = _scoreId
 
     private val gameScoreDao: GameScoreDao =
         GameScoreDatabase.getInstance(application).gameScoreDao
 
     fun send(gameScore: GameScore){
-
-    }
-
-    fun reset(){
-        _scoreId.value = null
+        viewModelScope.launch {
+            gameScoreDao.insert(gameScore)
+        }
     }
 }
