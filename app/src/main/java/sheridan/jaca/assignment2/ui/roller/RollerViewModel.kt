@@ -12,7 +12,6 @@ import sheridan.jaca.assignment2.database.GameScoreDatabase
 
 
 class RollerViewModel(application:Application) : AndroidViewModel(application) {
-    // TODO: Implement the ViewModel
 
     private val gameScoreDao: GameScoreDao =
         GameScoreDatabase.getInstance(application).gameScoreDao

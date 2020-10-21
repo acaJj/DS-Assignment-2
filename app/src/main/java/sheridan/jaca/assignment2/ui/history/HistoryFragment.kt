@@ -26,23 +26,27 @@ class HistoryFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        binding = FragmentHistoryBinding.inflate(inflater,container,false)
         val view = inflater.inflate(R.layout.fragment_history, container, false)
 
-        // Set the adapter
-        val recyclerView = view.findViewById<RecyclerView>(R.id.history_recycler_view)
-        recyclerView.adapter = HistoryRecyclerViewAdapter(view.context)
-
-        //observe gameHistory list in view model and calculate the current total based on all game results
-        viewModel.gameHistory.observe(viewLifecycleOwner){
-            var historyTotal = 0
-            for (score in it){
-                val gameTotal = score.die3Score + score.die1Score + score.die2Score
-                historyTotal += gameTotal
+        with(binding){
+            // Set the adapter
+            val recyclerView = binding.historyRecyclerView
+            val adapter = HistoryRecyclerViewAdapter(view.context)
+            recyclerView.adapter = adapter
+            //observe gameHistory list in view model and calculate the current total based on all game results
+            viewModel.gameHistory.observe(viewLifecycleOwner){
+                adapter.gameHistory = it
+                var historyTotal = 0
+                for (score in it){
+                    val gameTotal = score.die3Score + score.die1Score + score.die2Score
+                    historyTotal += gameTotal
+                }
+                binding.historyTotal.text = "Total: ${historyTotal}"
             }
-            binding.historyTotal.text = "Total: ${historyTotal}"
         }
 
-        return view
+        return binding.root
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
