@@ -2,8 +2,6 @@ package sheridan.jaca.assignment2.ui.roller
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
 import sheridan.jaca.assignment2.database.GameScore

@@ -1,6 +1,5 @@
 package sheridan.jaca.assignment2.ui.roller
 
-import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment

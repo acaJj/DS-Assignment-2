@@ -4,11 +4,8 @@ import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.RecyclerView
 import sheridan.jaca.assignment2.R
 import sheridan.jaca.assignment2.databinding.FragmentHistoryBinding
-import sheridan.jaca.assignment2.ui.history.dummy.DummyContent
 
 /**
  * A fragment representing a list of Items.
