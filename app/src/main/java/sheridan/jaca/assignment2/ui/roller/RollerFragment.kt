@@ -16,6 +16,10 @@ class RollerFragment : Fragment() {
     private val viewModel: RollerViewModel by viewModels()
     private lateinit var binding : FragmentRollerBinding
 
+    private val DIE_1 : String = "DIE_1"
+    private val DIE_2 : String = "DIE_2"
+    private val DIE_3 : String = "DIE_3"
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setHasOptionsMenu(true)
@@ -28,12 +32,17 @@ class RollerFragment : Fragment() {
         binding = FragmentRollerBinding.inflate(inflater,container,false)
         binding.btnRoll.setOnClickListener{rollDice()}
 
+        if(savedInstanceState != null){
+            binding.txtDie1.text = savedInstanceState.getString(DIE_1)
+            binding.txtDie2.text = savedInstanceState.getString(DIE_2)
+            binding.txtDie3.text = savedInstanceState.getString(DIE_3)
+        }
+
         return binding.root
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        // TODO: Use the ViewModel
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
@@ -50,6 +59,13 @@ class RollerFragment : Fragment() {
             }
             else -> super.onOptionsItemSelected(item)
         }
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        outState.putString("DIE_1",binding.txtDie1.text.toString())
+        outState.putString("DIE_2",binding.txtDie2.text.toString())
+        outState.putString("DIE_3",binding.txtDie3.text.toString())
+        super.onSaveInstanceState(outState)
     }
 
     private fun rollDice(){

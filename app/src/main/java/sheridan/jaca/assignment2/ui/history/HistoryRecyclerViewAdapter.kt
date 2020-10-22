@@ -36,7 +36,7 @@ class HistoryRecyclerViewAdapter(
         val gameTotal = item.die1Score + item.die2Score + item.die3Score
         holder.idView.text = position.toString()
         holder.contentView.text =
-            "${item.die1Score} " + "+ ${item.die2Score}" + "+ ${item.die3Score}" +
+            "${item.die1Score} " + "+ ${item.die2Score} " + "+ ${item.die3Score}" +
         " = ${gameTotal}"
     }
 
